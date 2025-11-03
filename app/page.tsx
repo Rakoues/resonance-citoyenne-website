@@ -1,101 +1,193 @@
-import Image from "next/image";
+import React from 'react';
+import { Heart, Users, Target, ArrowRight, Mail } from 'lucide-react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Button from '@/components/Button';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen flex flex-col">
+      <Header />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+      <main>
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-orange/10 via-honey/5 to-cream py-3xl md:py-4xl overflow-hidden">
+          {/* Decorative circles */}
+          <div className="absolute top-10 right-10 w-64 h-64 bg-orange/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 left-10 w-96 h-96 bg-honey/5 rounded-full blur-3xl" />
+
+          <div className="container relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-hero md:text-h1 font-display font-bold text-charcoal mb-lg">
+                La démocratie représentative traverse une crise.
+              </h1>
+              <p className="text-h3 md:text-h2 font-display font-semibold text-orange mb-xl">
+                Et si on explorait ensemble de nouvelles façons de décider ?
+              </p>
+              <p className="text-body-lg text-gray-warm max-w-2xl mx-auto mb-2xl">
+                Résonance Citoyenne est une association de recherche citoyenne.
+                Nous expérimentons des méthodes participatives innovantes pour restaurer
+                la confiance démocratique. Pas de certitudes, juste des hypothèses à tester ensemble.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-md justify-center">
+                <Button variant="primary" icon={Heart}>
+                  Participer à l'expérience
+                </Button>
+                <Button variant="secondary" icon={Users}>
+                  Nous connaître
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Le Constat en bref */}
+        <section className="py-3xl bg-white">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center mb-2xl">
+              <h2 className="text-h2 font-display font-bold text-charcoal mb-md">
+                Le constat
+              </h2>
+              <p className="text-body-lg text-gray-warm">
+                La crise démocratique n'est plus une hypothèse, c'est un fait observable.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-xl max-w-5xl mx-auto">
+              {/* Stat 1 */}
+              <div className="card text-center border-l-4 border-orange">
+                <div className="text-hero font-display font-bold text-orange mb-md">5</div>
+                <h3 className="text-h4 font-display font-semibold text-charcoal mb-sm">
+                  Gouvernements en un an
+                </h3>
+                <p className="text-body-sm text-gray-warm">
+                  Instabilité politique sans précédent depuis juin 2024
+                </p>
+              </div>
+
+              {/* Stat 2 */}
+              <div className="card text-center border-l-4 border-forest">
+                <div className="text-hero font-display font-bold text-forest mb-md">71%</div>
+                <h3 className="text-h4 font-display font-semibold text-charcoal mb-sm">
+                  Abstention des jeunes
+                </h3>
+                <p className="text-body-sm text-gray-warm">
+                  Les 18-24 ans ne se sentent plus représentés
+                </p>
+              </div>
+
+              {/* Stat 3 */}
+              <div className="card text-center border-l-4 border-sky">
+                <div className="text-hero font-display font-bold text-sky mb-md">74%</div>
+                <h3 className="text-h4 font-display font-semibold text-charcoal mb-sm">
+                  Veulent une réforme
+                </h3>
+                <p className="text-body-sm text-gray-warm">
+                  Des Français favorables à changer le mode de scrutin
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center mt-2xl">
+              <Button variant="ghost" icon={ArrowRight} iconPosition="right">
+                Comprendre la crise en profondeur
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Notre Approche */}
+        <section className="py-3xl bg-cream">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center mb-2xl">
+              <h2 className="text-h2 font-display font-bold text-charcoal mb-md">
+                Notre approche : l'expérimentation scientifique
+              </h2>
+              <p className="text-body-lg text-gray-warm">
+                Nous ne vendons pas une solution. Nous invitons à l'expérimentation collective.
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto space-y-xl">
+              {/* Étape 1 */}
+              <div className="flex gap-lg items-start">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-orange flex items-center justify-center text-white font-display font-bold text-h4">
+                  1
+                </div>
+                <div>
+                  <h3 className="text-h3 font-display font-semibold text-charcoal mb-sm">
+                    Nous testons différentes méthodes
+                  </h3>
+                  <p className="text-body text-gray-warm">
+                    Vote quadratique, démocratie liquide, tirage au sort... Nous explorons
+                    plusieurs systèmes de décision collective avec rigueur scientifique.
+                  </p>
+                </div>
+              </div>
+
+              {/* Étape 2 */}
+              <div className="flex gap-lg items-start">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-forest flex items-center justify-center text-white font-display font-bold text-h4">
+                  2
+                </div>
+                <div>
+                  <h3 className="text-h3 font-display font-semibold text-charcoal mb-sm">
+                    Tu participes à la recherche
+                  </h3>
+                  <p className="text-body text-gray-warm">
+                    Rejoins les expériences, teste les interfaces, partage ton ressenti.
+                    Chaque participation aide à construire des données scientifiques solides.
+                  </p>
+                </div>
+              </div>
+
+              {/* Étape 3 */}
+              <div className="flex gap-lg items-start">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-sky flex items-center justify-center text-white font-display font-bold text-h4">
+                  3
+                </div>
+                <div>
+                  <h3 className="text-h3 font-display font-semibold text-charcoal mb-sm">
+                    Nous publions tout (succès & échecs)
+                  </h3>
+                  <p className="text-body text-gray-warm">
+                    Transparence radicale : données ouvertes, méthodologie publique,
+                    code open-source. La science avance par l'honnêteté.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-2xl">
+              <Button variant="primary" icon={Target}>
+                Découvrir nos expérimentations
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact CTA */}
+        <section className="py-3xl bg-gradient-to-br from-orange via-terracotta to-honey text-white">
+          <div className="container max-w-3xl mx-auto text-center">
+            <h2 className="text-h2 font-display font-bold mb-md text-shadow-strong">
+              Une question ? Une idée ? Discutons ensemble
+            </h2>
+            <p className="text-body-lg mb-2xl opacity-90">
+              Résonance Citoyenne est un projet collectif. Ta voix compte.
+            </p>
+            <Button
+              variant="secondary"
+              icon={Mail}
+              className="bg-white text-orange border-white hover:bg-cream"
+            >
+              Nous contacter
+            </Button>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      <Footer />
     </div>
   );
 }
