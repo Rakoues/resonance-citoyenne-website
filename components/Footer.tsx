@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Waves, Github, Twitter, Mail } from 'lucide-react';
 
 export default function Footer() {
-  const footerLinks = {
+  const footerLinks: Record<string, Array<{ name: string; href: string; external?: boolean }>> = {
     'À propos': [
       { name: 'Mission', href: '/nous-connaitre' },
       { name: "L'équipe", href: '/nous-connaitre#equipe' },
