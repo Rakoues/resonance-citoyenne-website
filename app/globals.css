@@ -78,7 +78,7 @@
   .input {
     @apply h-[48px] px-md py-sm rounded-button border-2 border-gray-light
            font-body text-body text-charcoal placeholder:text-gray-warm
-           focus:border-orange focus:ring-orange-glow
+           focus:border-orange focus:outline-none focus:ring-2 focus:ring-orange/20
            disabled:bg-gray-light disabled:cursor-not-allowed;
   }
 

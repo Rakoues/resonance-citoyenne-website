@@ -5,24 +5,23 @@ import { Waves, Github, Twitter, Mail } from 'lucide-react';
 export default function Footer() {
   const footerLinks: Record<string, Array<{ name: string; href: string; external?: boolean }>> = {
     'À propos': [
-      { name: 'Mission', href: '/nous-connaitre' },
-      { name: "L'équipe", href: '/nous-connaitre#equipe' },
-      { name: 'Transparence', href: '/nous-connaitre#transparence' },
-    ],
-    'Expérimenter': [
-      { name: 'Vote quadratique', href: '/experimentations/vote-quadratique' },
+      { name: 'Nous connaître', href: '/nous-connaitre' },
+      { name: 'Le constat', href: '/le-constat' },
       { name: 'Recherche', href: '/recherche' },
-      { name: 'Résultats', href: '/experimentations#resultats' },
+    ],
+    'Participer': [
+      { name: 'Expérimentations', href: '/experimentations' },
+      { name: 'Rejoindre', href: '/participer' },
+      { name: 'Nous contacter', href: '/contact' },
     ],
     'Suivre': [
       { name: 'Newsletter', href: '/participer#newsletter' },
       { name: 'Twitter', href: '#', external: true },
-      { name: 'GitHub', href: '#', external: true },
+      { name: 'GitHub', href: 'https://github.com/Rakoues/resonance-citoyenne-website', external: true },
     ],
     'Légal': [
       { name: 'Mentions légales', href: '/mentions-legales' },
-      { name: 'Données personnelles', href: '/donnees' },
-      { name: 'Contact', href: '/contact' },
+      { name: 'Confidentialité', href: '/politique-de-confidentialite' },
     ],
   };
 

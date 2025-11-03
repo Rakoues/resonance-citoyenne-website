@@ -14,6 +14,7 @@ export default function Header() {
     { name: 'Expérimentations', href: '/experimentations' },
     { name: 'Recherche', href: '/recherche' },
     { name: 'Participer', href: '/participer' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -36,12 +37,14 @@ export default function Header() {
               className="font-body font-semibold text-body text-charcoal hover:text-orange transition-colors relative group"
             >
               {item.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange group-hover:w-full transition-all duration-250" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange group-hover:w-full transition-all duration-[250ms]" />
             </Link>
           ))}
-          <Button variant="primary" className="ml-md">
-            Rejoindre
-          </Button>
+          <Link href="/participer">
+            <Button variant="primary" className="ml-md">
+              Rejoindre
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -73,9 +76,11 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-            <Button variant="primary" className="mt-md w-full">
-              Rejoindre
-            </Button>
+            <Link href="/participer">
+              <Button variant="primary" className="mt-md w-full">
+                Rejoindre
+              </Button>
+            </Link>
           </div>
         </div>
       )}
