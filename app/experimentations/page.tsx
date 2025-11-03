@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Vote, Users2, Shuffle, Calculator, ArrowRight, Beaker } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -317,9 +318,11 @@ export default function ExperimentationsPage() {
             </div>
 
             <div className="text-center mt-xl">
-              <Button variant="secondary" icon={ArrowRight} iconPosition="right">
-                <a href="/recherche">Voir notre méthodologie</a>
-              </Button>
+              <Link href="/recherche">
+                <Button variant="secondary" icon={ArrowRight} iconPosition="right">
+                  Voir notre méthodologie
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -333,12 +336,14 @@ export default function ExperimentationsPage() {
             <p className="text-body-lg mb-2xl opacity-90">
               Inscris-toi pour être prévenu·e dès qu'une nouvelle expérimentation est lancée.
             </p>
-            <Button
-              variant="secondary"
-              className="bg-white text-orange border-white hover:bg-cream"
-            >
-              <a href="/participer">Participer aux expérimentations</a>
-            </Button>
+            <Link href="/participer">
+              <Button
+                variant="secondary"
+                className="bg-white text-orange border-white hover:bg-cream"
+              >
+                Participer aux expérimentations
+              </Button>
+            </Link>
           </div>
         </section>
       </main>

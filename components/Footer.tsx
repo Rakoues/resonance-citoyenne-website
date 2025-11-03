@@ -16,7 +16,7 @@ export default function Footer() {
     ],
     'Suivre': [
       { name: 'Newsletter', href: '/participer#newsletter' },
-      { name: 'Twitter', href: '#', external: true },
+      { name: 'Twitter', href: '#', external: true }, // TODO: Add real Twitter URL when available
       { name: 'GitHub', href: 'https://github.com/Rakoues/resonance-citoyenne-website', external: true },
     ],
     'Légal': [
@@ -85,7 +85,7 @@ export default function Footer() {
             <Twitter size={24} />
           </a>
           <a
-            href="#"
+            href="https://github.com/Rakoues/resonance-citoyenne-website"
             className="text-cream/70 hover:text-orange transition-colors"
             aria-label="GitHub"
             target="_blank"

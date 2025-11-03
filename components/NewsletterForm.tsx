@@ -37,7 +37,7 @@ export default function NewsletterForm() {
       setTimeout(() => {
         setStatus({ type: 'idle' });
       }, 5000);
-    } catch (error) {
+    } catch {
       setStatus({
         type: 'error',
         message: 'Oups, une erreur s\'est produite. Réessaie dans quelques instants.',

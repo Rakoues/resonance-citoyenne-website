@@ -65,7 +65,7 @@ export default function ContactForm() {
       setTimeout(() => {
         setStatus({ type: 'idle' });
       }, 5000);
-    } catch (error) {
+    } catch {
       setStatus({
         type: 'error',
         message: 'Oups, une erreur s\'est produite. Réessaie ou écris-nous directement à contact@resonance-citoyenne.fr',

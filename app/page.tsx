@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Heart, Users, Target, ArrowRight, Mail } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -31,12 +32,16 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-md justify-center">
-                <Button variant="primary" icon={Heart}>
-                  Participer à l&apos;expérience
-                </Button>
-                <Button variant="secondary" icon={Users}>
-                  Nous connaître
-                </Button>
+                <Link href="/participer">
+                  <Button variant="primary" icon={Heart}>
+                    Participer à l&apos;expérience
+                  </Button>
+                </Link>
+                <Link href="/nous-connaitre">
+                  <Button variant="secondary" icon={Users}>
+                    Nous connaître
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -90,9 +95,11 @@ export default function HomePage() {
             </div>
 
             <div className="text-center mt-2xl">
-              <Button variant="ghost" icon={ArrowRight} iconPosition="right">
-                Comprendre la crise en profondeur
-              </Button>
+              <Link href="/le-constat">
+                <Button variant="ghost" icon={ArrowRight} iconPosition="right">
+                  Comprendre la crise en profondeur
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -160,9 +167,11 @@ export default function HomePage() {
             </div>
 
             <div className="text-center mt-2xl">
-              <Button variant="primary" icon={Target}>
-                Découvrir nos expérimentations
-              </Button>
+              <Link href="/experimentations">
+                <Button variant="primary" icon={Target}>
+                  Découvrir nos expérimentations
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -176,13 +185,15 @@ export default function HomePage() {
             <p className="text-body-lg mb-2xl opacity-90">
               Résonance Citoyenne est un projet collectif. Ta voix compte.
             </p>
-            <Button
-              variant="secondary"
-              icon={Mail}
-              className="bg-white text-orange border-white hover:bg-cream"
-            >
-              Nous contacter
-            </Button>
+            <Link href="/contact">
+              <Button
+                variant="secondary"
+                icon={Mail}
+                className="bg-white text-orange border-white hover:bg-cream"
+              >
+                Nous contacter
+              </Button>
+            </Link>
           </div>
         </section>
       </main>

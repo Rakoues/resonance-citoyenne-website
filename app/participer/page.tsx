@@ -1,14 +1,12 @@
+'use client';
+
 import React from 'react';
+import Link from 'next/link';
 import { Beaker, Users, Heart, Bell, Share2, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
 import NewsletterForm from '@/components/NewsletterForm';
-
-export const metadata = {
-  title: 'Participer | Résonance Citoyenne',
-  description: 'Rejoins l\'aventure citoyenne ! Participe aux expérimentations, adhère à l\'association, ou suis nos actualités.',
-};
 
 export default function ParticiperPage() {
   return (
@@ -54,9 +52,11 @@ export default function ParticiperPage() {
                       teste de nouvelles formes de décision collective. Ton retour
                       d'expérience est précieux pour la recherche.
                     </p>
-                    <Button variant="ghost" icon={ArrowRight} iconPosition="right">
-                      <a href="/experimentations">Voir les expérimentations</a>
-                    </Button>
+                    <Link href="/experimentations">
+                      <Button variant="ghost" icon={ArrowRight} iconPosition="right">
+                        Voir les expérimentations
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -76,9 +76,11 @@ export default function ParticiperPage() {
                       de l'association, propose de nouvelles expérimentations, contribue
                       à faire avancer la démocratie participative.
                     </p>
-                    <Button variant="ghost" icon={ArrowRight} iconPosition="right">
-                      <a href="/nous-connaitre">En savoir plus</a>
-                    </Button>
+                    <Link href="/nous-connaitre">
+                      <Button variant="ghost" icon={ArrowRight} iconPosition="right">
+                        En savoir plus
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -98,9 +100,11 @@ export default function ParticiperPage() {
                       propose des améliorations. Chaque retour aide à affiner
                       notre compréhension des systèmes démocratiques.
                     </p>
-                    <Button variant="ghost" icon={ArrowRight} iconPosition="right">
-                      <a href="/recherche">Notre méthodologie</a>
-                    </Button>
+                    <Link href="/recherche">
+                      <Button variant="ghost" icon={ArrowRight} iconPosition="right">
+                        Notre méthodologie
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -147,13 +151,32 @@ export default function ParticiperPage() {
                   sur les réseaux sociaux, dans tes cercles citoyens.
                 </p>
                 <div className="flex flex-wrap gap-md justify-center">
-                  <Button variant="secondary">
+                  <Button
+                    variant="secondary"
+                    onClick={() => {
+                      const url = encodeURIComponent(window.location.href);
+                      const text = encodeURIComponent('Rejoins Résonance Citoyenne');
+                      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+                    }}
+                  >
                     Partager sur Twitter
                   </Button>
-                  <Button variant="secondary">
+                  <Button
+                    variant="secondary"
+                    onClick={() => {
+                      const url = encodeURIComponent(window.location.href);
+                      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+                    }}
+                  >
                     Partager sur Facebook
                   </Button>
-                  <Button variant="ghost">
+                  <Button
+                    variant="ghost"
+                    onClick={() => {
+                      navigator.clipboard.writeText(window.location.href);
+                      alert('Lien copié !');
+                    }}
+                  >
                     Copier le lien
                   </Button>
                 </div>
@@ -197,12 +220,14 @@ export default function ParticiperPage() {
             <p className="text-body-lg mb-2xl opacity-90">
               Nous sommes ouverts à toutes les propositions. Contacte-nous !
             </p>
-            <Button
-              variant="secondary"
-              className="bg-white text-orange border-white hover:bg-cream"
-            >
-              <a href="/contact">Nous contacter</a>
-            </Button>
+            <Link href="/contact">
+              <Button
+                variant="secondary"
+                className="bg-white text-orange border-white hover:bg-cream"
+              >
+                Nous contacter
+              </Button>
+            </Link>
           </div>
         </section>
       </main>

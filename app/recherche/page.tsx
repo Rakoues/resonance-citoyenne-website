@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Microscope, Shield, Eye, BookOpen, Database, Github, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -383,9 +384,11 @@ export default function RecherchePage() {
                 collective et contribuer au renouveau démocratique.
               </p>
               <div className="text-center">
-                <Button variant="secondary" icon={ArrowRight} iconPosition="right">
-                  <a href="/nous-connaitre">En savoir plus sur l'association</a>
-                </Button>
+                <Link href="/nous-connaitre">
+                  <Button variant="secondary" icon={ArrowRight} iconPosition="right">
+                    En savoir plus sur l'association
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -401,12 +404,14 @@ export default function RecherchePage() {
               Participe aux expérimentations, partage ton feedback, aide-nous à faire avancer
               la compréhension des systèmes démocratiques.
             </p>
-            <Button
-              variant="secondary"
-              className="bg-white text-orange border-white hover:bg-cream"
-            >
-              <a href="/participer">Participer</a>
-            </Button>
+            <Link href="/participer">
+              <Button
+                variant="secondary"
+                className="bg-white text-orange border-white hover:bg-cream"
+              >
+                Participer
+              </Button>
+            </Link>
           </div>
         </section>
       </main>

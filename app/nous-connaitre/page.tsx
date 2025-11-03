@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Users, Lightbulb, HeartHandshake, Eye, Github } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -209,9 +210,11 @@ export default function NousConnaitrePage() {
                 </div>
 
                 <div className="mt-xl">
-                  <Button variant="secondary" icon={Github} iconPosition="left">
-                    Voir notre code sur GitHub
-                  </Button>
+                  <Link href="https://github.com/Rakoues/resonance-citoyenne-website" target="_blank" rel="noopener noreferrer">
+                    <Button variant="secondary" icon={Github} iconPosition="left">
+                      Voir notre code sur GitHub
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -229,12 +232,16 @@ export default function NousConnaitrePage() {
               il y a une place pour toi dans Résonance Citoyenne.
             </p>
             <div className="flex flex-col sm:flex-row gap-md justify-center">
-              <Button variant="primary">
-                Participer à une expérience
-              </Button>
-              <Button variant="secondary">
-                Adhérer à l&apos;association
-              </Button>
+              <Link href="/experimentations">
+                <Button variant="primary">
+                  Participer à une expérience
+                </Button>
+              </Link>
+              <Link href="/participer">
+                <Button variant="secondary">
+                  Adhérer à l&apos;association
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { AlertCircle, TrendingDown, Users2, Scale } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -252,9 +253,11 @@ export default function LeConstatPage() {
                 </div>
 
                 <div className="mt-xl">
-                  <Button variant="primary">
-                    Découvrir nos expérimentations
-                  </Button>
+                  <Link href="/experimentations">
+                    <Button variant="primary">
+                      Découvrir nos expérimentations
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
