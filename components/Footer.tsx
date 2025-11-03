@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
           <p className="text-body-lg text-cream/80 max-w-2xl">
             Association de recherche citoyenne explorant de nouvelles formes de décision collective.
-            Participez à l'expérience de la démocratie directe.
+            Participez à l&apos;expérience de la démocratie directe.
           </p>
         </div>
 

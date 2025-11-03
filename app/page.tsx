@@ -32,7 +32,7 @@ export default function HomePage() {
 
               <div className="flex flex-col sm:flex-row gap-md justify-center">
                 <Button variant="primary" icon={Heart}>
-                  Participer à l'expérience
+                  Participer à l&apos;expérience
                 </Button>
                 <Button variant="secondary" icon={Users}>
                   Nous connaître
@@ -50,7 +50,7 @@ export default function HomePage() {
                 Le constat
               </h2>
               <p className="text-body-lg text-gray-warm">
-                La crise démocratique n'est plus une hypothèse, c'est un fait observable.
+                La crise démocratique n&apos;est plus une hypothèse, c&apos;est un fait observable.
               </p>
             </div>
 
@@ -102,10 +102,10 @@ export default function HomePage() {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center mb-2xl">
               <h2 className="text-h2 font-display font-bold text-charcoal mb-md">
-                Notre approche : l'expérimentation scientifique
+                Notre approche : l&apos;expérimentation scientifique
               </h2>
               <p className="text-body-lg text-gray-warm">
-                Nous ne vendons pas une solution. Nous invitons à l'expérimentation collective.
+                Nous ne vendons pas une solution. Nous invitons à l&apos;expérimentation collective.
               </p>
             </div>
 
@@ -153,7 +153,7 @@ export default function HomePage() {
                   </h3>
                   <p className="text-body text-gray-warm">
                     Transparence radicale : données ouvertes, méthodologie publique,
-                    code open-source. La science avance par l'honnêteté.
+                    code open-source. La science avance par l&apos;honnêteté.
                   </p>
                 </div>
               </div>

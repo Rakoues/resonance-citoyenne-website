@@ -43,7 +43,7 @@ export default function NousConnaitrePage() {
                 <div className="space-y-md text-body text-gray-warm">
                   <p>
                     <strong className="text-charcoal">Résonance Citoyenne</strong> est une association loi 1901
-                    fondée en 2025 par des citoyens convaincus qu'une autre démocratie est possible.
+                    fondée en 2025 par des citoyens convaincus qu&apos;une autre démocratie est possible.
                   </p>
                   <p>
                     Nous ne sommes ni un parti politique, ni un think tank classique. Nous sommes un{' '}
@@ -75,14 +75,14 @@ export default function NousConnaitrePage() {
                 <div className="space-y-md text-body text-gray-warm">
                   <p>
                     La démocratie représentative traverse une crise profonde. En France comme ailleurs,
-                    les citoyens ne se sentent plus représentés, l'abstention explose, et les institutions
+                    les citoyens ne se sentent plus représentés, l&apos;abstention explose, et les institutions
                     du XXe siècle ne parviennent plus à gérer la complexité du XXIe.
                   </p>
                   <p className="text-charcoal font-semibold text-body-lg">
-                    Mais au lieu de se lamenter, nous avons décidé d'agir.
+                    Mais au lieu de se lamenter, nous avons décidé d&apos;agir.
                   </p>
                   <p>
-                    Plutôt que d'affirmer que telle ou telle solution est LA réponse, nous adoptons une{' '}
+                    Plutôt que d&apos;affirmer que telle ou telle solution est LA réponse, nous adoptons une{' '}
                     <strong className="text-charcoal">démarche scientifique</strong> : formuler des hypothèses,
                     les tester rigoureusement, publier les résultats (même les échecs), et apprendre collectivement.
                   </p>
@@ -92,7 +92,7 @@ export default function NousConnaitrePage() {
                     par les citoyens ? Améliorent-elles la qualité des décisions collectives ?
                   </p>
                   <p className="text-orange font-semibold">
-                    Nous ne savons pas encore. Et c'est précisément pour ça que nous expérimentons.
+                    Nous ne savons pas encore. Et c&apos;est précisément pour ça que nous expérimentons.
                   </p>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export default function NousConnaitrePage() {
                     <p className="text-body text-gray-warm">
                       Les citoyens ne sont pas des sujets d'étude passifs, mais des co-chercheurs actifs.
                       Chaque participant peut donner son feedback, suggérer des améliorations, et contribuer
-                      à l'analyse des résultats.
+                      à l&apos;analyse des résultats.
                     </p>
                   </div>
 
@@ -149,7 +149,7 @@ export default function NousConnaitrePage() {
                       4. Open source et réplicabilité
                     </h3>
                     <p className="text-body text-gray-warm">
-                      Tout notre code est sur GitHub sous licence MIT. N'importe qui peut reproduire nos
+                      Tout notre code est sur GitHub sous licence MIT. N&apos;importe qui peut reproduire nos
                       expériences, les adapter à son contexte, et contribuer aux améliorations.
                     </p>
                   </div>
@@ -172,7 +172,7 @@ export default function NousConnaitrePage() {
                 </h2>
                 <div className="space-y-md text-body text-gray-warm mb-xl">
                   <p>
-                    Nous pratiquons ce que nous prêchons. Les décisions de l'association sont prises
+                    Nous pratiquons ce que nous prêchons. Les décisions de l&apos;association sont prises
                     en vote quadratique par les membres. Le dashboard est public et actualisé en temps réel.
                   </p>
                   <p className="text-charcoal font-semibold">
@@ -222,7 +222,7 @@ export default function NousConnaitrePage() {
         <section className="py-3xl bg-white">
           <div className="container max-w-3xl text-center">
             <h2 className="text-h2 font-display font-bold text-charcoal mb-md">
-              Rejoins l'aventure
+              Rejoins l&apos;aventure
             </h2>
             <p className="text-body-lg text-gray-warm mb-2xl">
               Que tu sois citoyen curieux, chercheur, développeur ou militant associatif,
@@ -233,7 +233,7 @@ export default function NousConnaitrePage() {
                 Participer à une expérience
               </Button>
               <Button variant="secondary">
-                Adhérer à l'association
+                Adhérer à l&apos;association
               </Button>
             </div>
           </div>

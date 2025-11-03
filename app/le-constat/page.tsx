@@ -23,7 +23,7 @@ export default function LeConstatPage() {
                 Le constat
               </h1>
               <p className="text-body-lg text-gray-warm">
-                La crise démocratique n'est plus une hypothèse, c'est un fait observable et quantifiable.
+                La crise démocratique n&apos;est plus une hypothèse, c&apos;est un fait observable et quantifiable.
               </p>
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function LeConstatPage() {
                 </h2>
                 <p className="text-body-lg text-gray-warm mb-xl">
                   Depuis les élections législatives de juin-juillet 2024, la France connaît
-                  une période d'instabilité politique sans précédent.
+                  une période d&apos;instabilité politique sans précédent.
                 </p>
               </div>
             </div>
@@ -67,7 +67,7 @@ export default function LeConstatPage() {
                   Milliards € de dette publique
                 </h3>
                 <p className="text-body-sm text-gray-warm">
-                  Déficit de 170 milliards d'euros en 2024. Impossibilité d'adopter un budget
+                  Déficit de 170 milliards d&apos;euros en 2024. Impossibilité d&apos;adopter un budget
                   dans un contexte de paralysie institutionnelle.
                 </p>
               </div>
@@ -81,17 +81,17 @@ export default function LeConstatPage() {
                   <li>• Nouveau Front Populaire : ~180 députés</li>
                   <li>• Ensemble pour la République : ~160 députés</li>
                   <li>• Rassemblement National : ~143 députés</li>
-                  <li className="font-semibold text-charcoal">→ Aucun n'atteint les 289 nécessaires</li>
+                  <li className="font-semibold text-charcoal">→ Aucun n&apos;atteint les 289 nécessaires</li>
                 </ul>
               </div>
 
               <div className="card border-l-4 border-forest">
                 <div className="text-hero font-display font-bold text-forest mb-md">49.3</div>
                 <h3 className="text-h3 font-display font-semibold text-charcoal mb-sm">
-                  Utilisation répétée de l'article
+                  Utilisation répétée de l&apos;article
                 </h3>
                 <p className="text-body-sm text-gray-warm">
-                  Pour faire passer des textes sans vote. Symbole d'un système à bout de souffle,
+                  Pour faire passer des textes sans vote. Symbole d&apos;un système à bout de souffle,
                   incapable de générer des majorités stables.
                 </p>
               </div>
@@ -111,7 +111,7 @@ export default function LeConstatPage() {
                   La défiance citoyenne
                 </h2>
                 <p className="text-body-lg text-gray-warm mb-xl">
-                  L'abstention massive et le sentiment d'impuissance révèlent une crise de confiance profonde.
+                  L&apos;abstention massive et le sentiment d&apos;impuissance révèlent une crise de confiance profonde.
                 </p>
               </div>
             </div>
@@ -168,7 +168,7 @@ export default function LeConstatPage() {
                     ou dans le <strong className="text-charcoal">système institutionnel</strong> lui-même ?
                   </p>
                   <p className="text-body-lg text-orange font-semibold">
-                    Notre analyse : c'est un problème hybride.
+                    Notre analyse : c&apos;est un problème hybride.
                   </p>
                 </div>
               </div>
@@ -193,8 +193,8 @@ export default function LeConstatPage() {
                   2. Culture du compromis absente
                 </h3>
                 <p className="text-body text-gray-warm">
-                  Contrairement aux démocraties parlementaires comme l'Allemagne ou les Pays-Bas,
-                  les institutions françaises n'ont pas développé de culture de coalition et de compromis.
+                  Contrairement aux démocraties parlementaires comme l&apos;Allemagne ou les Pays-Bas,
+                  les institutions françaises n&apos;ont pas développé de culture de coalition et de compromis.
                   Chaque bloc refuse de céder sur ses positions.
                 </p>
               </div>
@@ -230,7 +230,7 @@ export default function LeConstatPage() {
                 </h2>
                 <div className="space-y-md text-body text-gray-warm">
                   <p className="text-body-lg text-charcoal font-semibold">
-                    La question n'est donc pas seulement de résoudre les désaccords politiques,
+                    La question n&apos;est donc pas seulement de résoudre les désaccords politiques,
                     mais de repenser le système de décision collective lui-même.
                   </p>
                   <p>
@@ -239,10 +239,10 @@ export default function LeConstatPage() {
                     à la complexité du XXIe.
                   </p>
                   <p className="text-orange font-semibold text-body-lg">
-                    La représentation a échoué. Il est temps de restaurer l'autonomie citoyenne.
+                    La représentation a échoué. Il est temps de restaurer l&apos;autonomie citoyenne.
                   </p>
                   <p>
-                    Au lieu d'attendre qu'un énième gouvernement tombe ou qu'une réforme impossible
+                    Au lieu d&apos;attendre qu&apos;un énième gouvernement tombe ou qu&apos;une réforme impossible
                     soit votée, explorons ensemble des alternatives : vote quadratique, démocratie liquide,
                     tirage au sort, budgets participatifs...
                   </p>
