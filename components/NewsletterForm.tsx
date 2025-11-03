@@ -17,18 +17,38 @@ export default function NewsletterForm() {
     e.preventDefault();
     setStatus({ type: 'loading' });
 
-    // TODO: Integrate with newsletter service (Mailchimp, Resend, etc.)
     try {
-      // Simulate API delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const googleSheetsUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL;
 
-      // TODO: Replace with actual newsletter signup logic
-      console.log('Newsletter signup:', email);
+      if (!googleSheetsUrl) {
+        // Fallback: Show instructions to manually add to list
+        console.log('Newsletter signup:', email);
 
-      setStatus({
-        type: 'success',
-        message: 'Merci ! Tu es inscrit·e à notre newsletter. Check tes emails ! 📬',
-      });
+        setStatus({
+          type: 'success',
+          message: `Merci ! Pour l'instant, envoie un email à contact.resonancecitoyenne@gmail.com avec comme objet "Newsletter" pour t'inscrire. On automatise bientôt !`,
+        });
+      } else {
+        // Send to Google Sheets via Google Apps Script Web App
+        await fetch(googleSheetsUrl, {
+          method: 'POST',
+          mode: 'no-cors', // Google Scripts doesn't support CORS
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: email,
+            date: new Date().toISOString(),
+            source: 'website',
+          }),
+        });
+
+        // With no-cors, we can't read the response, so we assume success
+        setStatus({
+          type: 'success',
+          message: 'Merci ! Tu es inscrit·e à notre newsletter. Check tes emails ! 📬',
+        });
+      }
 
       // Reset form
       setEmail('');

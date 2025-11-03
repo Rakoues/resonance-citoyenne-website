@@ -33,7 +33,7 @@ export default function MentionsLegalesPage() {
                   <p>Association loi 1901</p>
                   <p>RNA : [En cours d'attribution]</p>
                   <p>Siège social : [Adresse à compléter]</p>
-                  <p>Email : <a href="mailto:contact@resonance-citoyenne.fr" className="text-orange hover:underline">contact@resonance-citoyenne.fr</a></p>
+                  <p>Email : <a href="mailto:contact.resonancecitoyenne@gmail.com" className="text-orange hover:underline">contact.resonancecitoyenne@gmail.com</a></p>
                 </div>
               </div>
 
@@ -153,8 +153,8 @@ export default function MentionsLegalesPage() {
                 </p>
                 <p>
                   Email :{' '}
-                  <a href="mailto:contact@resonance-citoyenne.fr" className="text-orange hover:underline font-semibold">
-                    contact@resonance-citoyenne.fr
+                  <a href="mailto:contact.resonancecitoyenne@gmail.com" className="text-orange hover:underline font-semibold">
+                    contact.resonancecitoyenne@gmail.com
                   </a>
                 </p>
                 <p className="mt-md">

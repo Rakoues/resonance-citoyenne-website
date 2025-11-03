@@ -69,7 +69,7 @@ export default function Footer() {
         {/* Social Links */}
         <div className="flex items-center gap-lg mb-xl border-t border-cream/20 pt-xl">
           <a
-            href="mailto:contact@resonance-citoyenne.fr"
+            href="mailto:contact.resonancecitoyenne@gmail.com"
             className="text-cream/70 hover:text-orange transition-colors"
             aria-label="Email"
           >

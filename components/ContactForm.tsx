@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import Button from './Button';
 
 interface FormData {
@@ -39,19 +40,40 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus({ type: 'loading' });
 
-    // TODO: Integrate with email service (Resend, EmailJS, etc.)
-    // For now, simulate API call
     try {
-      // Simulate API delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Check if EmailJS is configured
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-      // TODO: Replace with actual email sending logic
-      console.log('Form submitted:', formData);
+      if (!serviceId || !templateId || !publicKey) {
+        // Fallback: Show the data in console and display manual instructions
+        console.log('Contact form submission:', formData);
 
-      setStatus({
-        type: 'success',
-        message: 'Message envoyé ! On te répond sous 48h maximum.',
-      });
+        setStatus({
+          type: 'success',
+          message: `Message reçu ! Pour l'instant, envoie directement ton message à contact.resonancecitoyenne@gmail.com. On configure l'envoi automatique bientôt !`,
+        });
+      } else {
+        // Send email via EmailJS
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+            to_email: 'contact.resonancecitoyenne@gmail.com',
+          },
+          publicKey
+        );
+
+        setStatus({
+          type: 'success',
+          message: 'Message envoyé ! On te répond sous 48h maximum.',
+        });
+      }
 
       // Reset form
       setFormData({
@@ -68,7 +90,7 @@ export default function ContactForm() {
     } catch {
       setStatus({
         type: 'error',
-        message: 'Oups, une erreur s\'est produite. Réessaie ou écris-nous directement à contact@resonance-citoyenne.fr',
+        message: 'Oups, une erreur s\'est produite. Réessaie ou écris-nous directement à contact.resonancecitoyenne@gmail.com',
       });
     }
   };

@@ -62,10 +62,10 @@ export default function ContactPage() {
               <p className="text-body text-gray-warm">
                 Ou écris-nous directement à{' '}
                 <a
-                  href="mailto:contact@resonance-citoyenne.fr"
+                  href="mailto:contact.resonancecitoyenne@gmail.com"
                   className="text-orange hover:underline font-semibold"
                 >
-                  contact@resonance-citoyenne.fr
+                  contact.resonancecitoyenne@gmail.com
                 </a>
               </p>
             </div>

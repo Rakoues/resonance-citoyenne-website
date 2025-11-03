@@ -83,7 +83,7 @@ export default function PolitiqueConfidentialitePage() {
                 <div className="pl-lg border-l-4 border-orange/20">
                   <p><strong className="text-charcoal">Association Résonance Citoyenne</strong></p>
                   <p>Association loi 1901</p>
-                  <p>Email : <a href="mailto:contact@resonance-citoyenne.fr" className="text-orange hover:underline">contact@resonance-citoyenne.fr</a></p>
+                  <p>Email : <a href="mailto:contact.resonancecitoyenne@gmail.com" className="text-orange hover:underline">contact.resonancecitoyenne@gmail.com</a></p>
                 </div>
               </div>
 
@@ -231,8 +231,8 @@ export default function PolitiqueConfidentialitePage() {
                   </p>
                   <p>
                     Envoie un email à{' '}
-                    <a href="mailto:contact@resonance-citoyenne.fr" className="text-orange hover:underline font-semibold">
-                      contact@resonance-citoyenne.fr
+                    <a href="mailto:contact.resonancecitoyenne@gmail.com" className="text-orange hover:underline font-semibold">
+                      contact.resonancecitoyenne@gmail.com
                     </a>
                     {' '}avec l'objet "RGPD - [Ton droit]".
                   </p>
@@ -338,8 +338,8 @@ export default function PolitiqueConfidentialitePage() {
                 </p>
                 <p>
                   Email :{' '}
-                  <a href="mailto:contact@resonance-citoyenne.fr" className="text-orange hover:underline font-semibold">
-                    contact@resonance-citoyenne.fr
+                  <a href="mailto:contact.resonancecitoyenne@gmail.com" className="text-orange hover:underline font-semibold">
+                    contact.resonancecitoyenne@gmail.com
                   </a>
                 </p>
                 <p className="mt-md">
