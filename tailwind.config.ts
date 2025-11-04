@@ -38,7 +38,7 @@ export default {
       },
       fontFamily: {
         display: ['var(--font-fraunces)', 'serif'],
-        body: ['var(--font-inter)', 'sans-serif'],
+        body: ['var(--font-outfit)', 'sans-serif'],
         accent: ['var(--font-caveat)', 'cursive'],
       },
       fontSize: {

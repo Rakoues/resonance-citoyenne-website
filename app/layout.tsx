@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, Caveat } from "next/font/google";
+import { Fraunces, Outfit, Caveat } from "next/font/google";
 import "./globals.css";
 
 // Fraunces - Display font for headings and emotional moments
@@ -10,9 +10,9 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
-// Inter - Body font for readability
-const inter = Inter({
-  variable: "--font-inter",
+// Outfit - Body font for warmth and readability
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -45,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${fraunces.variable} ${inter.variable} ${caveat.variable}`}>
+    <html lang="fr" className={`${fraunces.variable} ${outfit.variable} ${caveat.variable}`}>
       <body className="font-body bg-cream text-charcoal antialiased">
         {children}
       </body>
