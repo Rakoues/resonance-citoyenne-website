@@ -95,7 +95,7 @@ export default function HomePage() {
             </div>
 
             <div className="flex justify-center mt-2xl">
-              <Link href="/le-constat">
+              <Link href="/le-constat" className="inline-block">
                 <Button variant="ghost" icon={ArrowRight} iconPosition="right">
                   Comprendre la crise en profondeur
                 </Button>
@@ -167,7 +167,7 @@ export default function HomePage() {
             </div>
 
             <div className="flex justify-center mt-2xl">
-              <Link href="/experimentations">
+              <Link href="/experimentations" className="inline-block">
                 <Button variant="primary" icon={Target}>
                   Découvrir nos expérimentations
                 </Button>
@@ -186,7 +186,7 @@ export default function HomePage() {
               Résonance Citoyenne est un projet collectif. Ta voix compte.
             </p>
             <div className="flex justify-center">
-              <Link href="/contact">
+              <Link href="/contact" className="inline-block">
                 <Button
                   variant="secondary"
                   icon={Mail}

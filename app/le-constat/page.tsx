@@ -252,8 +252,8 @@ export default function LeConstatPage() {
                   </p>
                 </div>
 
-                <div className="mt-xl">
-                  <Link href="/experimentations">
+                <div className="mt-xl flex justify-center">
+                  <Link href="/experimentations" className="inline-block">
                     <Button variant="primary">
                       Découvrir nos expérimentations
                     </Button>

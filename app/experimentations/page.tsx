@@ -317,8 +317,8 @@ export default function ExperimentationsPage() {
               </div>
             </div>
 
-            <div className="text-center mt-xl">
-              <Link href="/recherche">
+            <div className="flex justify-center mt-xl">
+              <Link href="/recherche" className="inline-block">
                 <Button variant="secondary" icon={ArrowRight} iconPosition="right">
                   Voir notre méthodologie
                 </Button>
@@ -336,14 +336,16 @@ export default function ExperimentationsPage() {
             <p className="text-body-lg mb-2xl opacity-90">
               Inscris-toi pour être prévenu·e dès qu'une nouvelle expérimentation est lancée.
             </p>
-            <Link href="/participer">
-              <Button
-                variant="secondary"
-                className="bg-white text-orange border-white hover:bg-cream"
-              >
-                Participer aux expérimentations
-              </Button>
-            </Link>
+            <div className="flex justify-center">
+              <Link href="/participer" className="inline-block">
+                <Button
+                  variant="secondary"
+                  className="bg-white text-orange border-white hover:bg-cream"
+                >
+                  Participer aux expérimentations
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
       </main>

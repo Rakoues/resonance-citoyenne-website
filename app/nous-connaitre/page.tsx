@@ -209,8 +209,8 @@ export default function NousConnaitrePage() {
                   </div>
                 </div>
 
-                <div className="mt-xl">
-                  <Link href="https://github.com/Rakoues/resonance-citoyenne-website" target="_blank" rel="noopener noreferrer">
+                <div className="flex justify-center mt-xl">
+                  <Link href="https://github.com/Rakoues/resonance-citoyenne-website" target="_blank" rel="noopener noreferrer" className="inline-block">
                     <Button variant="secondary" icon={Github} iconPosition="left">
                       Voir notre code sur GitHub
                     </Button>

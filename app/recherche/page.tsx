@@ -383,8 +383,8 @@ export default function RecherchePage() {
                 Notre seul objectif : faire avancer la recherche sur les systèmes de décision
                 collective et contribuer au renouveau démocratique.
               </p>
-              <div className="text-center">
-                <Link href="/nous-connaitre">
+              <div className="flex justify-center">
+                <Link href="/nous-connaitre" className="inline-block">
                   <Button variant="secondary" icon={ArrowRight} iconPosition="right">
                     En savoir plus sur l'association
                   </Button>
@@ -404,14 +404,16 @@ export default function RecherchePage() {
               Participe aux expérimentations, partage ton feedback, aide-nous à faire avancer
               la compréhension des systèmes démocratiques.
             </p>
-            <Link href="/participer">
-              <Button
-                variant="secondary"
-                className="bg-white text-orange border-white hover:bg-cream"
-              >
-                Participer
-              </Button>
-            </Link>
+            <div className="flex justify-center">
+              <Link href="/participer" className="inline-block">
+                <Button
+                  variant="secondary"
+                  className="bg-white text-orange border-white hover:bg-cream"
+                >
+                  Participer
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
       </main>

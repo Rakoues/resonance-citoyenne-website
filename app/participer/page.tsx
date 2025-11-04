@@ -220,14 +220,16 @@ export default function ParticiperPage() {
             <p className="text-body-lg mb-2xl opacity-90">
               Nous sommes ouverts à toutes les propositions. Contacte-nous !
             </p>
-            <Link href="/contact">
-              <Button
-                variant="secondary"
-                className="bg-white text-orange border-white hover:bg-cream"
-              >
-                Nous contacter
-              </Button>
-            </Link>
+            <div className="flex justify-center">
+              <Link href="/contact" className="inline-block">
+                <Button
+                  variant="secondary"
+                  className="bg-white text-orange border-white hover:bg-cream"
+                >
+                  Nous contacter
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
       </main>
