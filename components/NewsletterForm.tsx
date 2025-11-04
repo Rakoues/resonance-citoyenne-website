@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Mail, CheckCircle, AlertCircle } from 'lucide-react';
 import Button from './Button';
+import { getSupabase } from '@/lib/supabase';
 
 interface FormStatus {
   type: 'idle' | 'loading' | 'success' | 'error';
@@ -18,9 +19,9 @@ export default function NewsletterForm() {
     setStatus({ type: 'loading' });
 
     try {
-      const googleSheetsUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL;
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
-      if (!googleSheetsUrl) {
+      if (!supabaseUrl) {
         // Fallback: Show instructions to manually add to list
         console.log('Newsletter signup:', email);
 
@@ -29,21 +30,25 @@ export default function NewsletterForm() {
           message: `Merci ! Pour l'instant, envoie un email à contact.resonancecitoyenne@gmail.com avec comme objet "Newsletter" pour t'inscrire. On automatise bientôt !`,
         });
       } else {
-        // Send to Google Sheets via Google Apps Script Web App
-        await fetch(googleSheetsUrl, {
-          method: 'POST',
-          mode: 'no-cors', // Google Scripts doesn't support CORS
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            email: email,
-            date: new Date().toISOString(),
-            source: 'website',
-          }),
-        });
+        // Send to Supabase
+        const supabase = getSupabase();
+        if (!supabase) {
+          throw new Error('Supabase not configured');
+        }
 
-        // With no-cors, we can't read the response, so we assume success
+        const { error } = await supabase
+          .from('newsletter_subscriptions')
+          .insert([
+            {
+              email: email,
+              source: 'website',
+            },
+          ]);
+
+        if (error) {
+          throw error;
+        }
+
         setStatus({
           type: 'success',
           message: 'Merci ! Tu es inscrit·e à notre newsletter. Check tes emails ! 📬',

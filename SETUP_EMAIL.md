@@ -55,72 +55,51 @@
 
 ---
 
-## 2. Google Sheets (Pour la newsletter)
+## 2. Supabase (Pour la newsletter)
 
 ### Étapes de configuration:
 
-1. **Créer un Google Sheet**
-   - Va sur https://sheets.google.com
-   - Crée une nouvelle feuille
-   - Nomme-la "Newsletter Résonance Citoyenne"
-   - Dans la première ligne, ajoute ces colonnes:
-     - A1: Email
-     - B1: Date
-     - C1: Source
+1. **Créer un compte Supabase**
+   - Va sur https://supabase.com
+   - Inscris-toi gratuitement (très généreux en plan gratuit)
+   - Clique "New Project"
 
-2. **Créer un Google Apps Script**
-   - Dans ton Google Sheet, clique sur "Extensions" → "Apps Script"
-   - Supprime tout le code et colle celui-ci:
+2. **Créer ton projet**
+   - Nom: "Resonance Citoyenne"
+   - Database Password: (choisis un mot de passe sécurisé et garde-le !)
+   - Region: Europe West (Ireland) - le plus proche
+   - Clique "Create new project"
+   - ⏳ Attends 2-3 minutes que le projet se crée
 
-   ```javascript
-   function doPost(e) {
-     try {
-       // Ouvre la feuille de calcul
-       var sheet = SpreadsheetApp.getActiveSheet();
+3. **Créer la table newsletter**
+   - Dans le menu à gauche, clique sur "Table Editor"
+   - Clique "Create a new table"
+   - Nom de la table: `newsletter_subscriptions`
+   - Active "Enable Row Level Security (RLS)" ✅
+   - Ajoute ces colonnes (les colonnes `id` et `created_at` sont déjà là):
+     - `email` (type: text) - REQUIRED ✅
+     - `source` (type: text) - valeur par défaut: 'website'
+   - Clique "Save"
 
-       // Parse les données reçues
-       var data = JSON.parse(e.postData.contents);
+4. **Configurer les permissions (RLS)**
+   - Dans la table que tu viens de créer, clique sur le bouton "RLS"
+   - Clique "New Policy"
+   - Template: "Enable insert for everyone"
+   - Policy name: "Allow anonymous inserts"
+   - Clique "Review" puis "Save policy"
 
-       // Ajoute une nouvelle ligne
-       sheet.appendRow([
-         data.email,
-         data.date,
-         data.source || 'website'
-       ]);
+5. **Récupérer tes clés API**
+   - Dans le menu à gauche, clique sur "Settings" (icône engrenage)
+   - Puis "API"
+   - Copie:
+     - `Project URL` → c'est ton `SUPABASE_URL`
+     - `anon public` (dans API Keys) → c'est ton `SUPABASE_ANON_KEY`
 
-       // Retourne succès
-       return ContentService
-         .createTextOutput(JSON.stringify({success: true}))
-         .setMimeType(ContentService.MimeType.JSON);
-
-     } catch(error) {
-       return ContentService
-         .createTextOutput(JSON.stringify({success: false, error: error.toString()}))
-         .setMimeType(ContentService.MimeType.JSON);
-     }
-   }
-
-   function doGet(e) {
-     return ContentService.createTextOutput("Newsletter API is running!");
-   }
+6. **Ajouter dans .env.local:**
    ```
-
-3. **Déployer le script**
-   - Clique sur "Déployer" → "Nouveau déploiement"
-   - Type: "Application Web"
-   - Execute as: "Moi"
-   - Who has access: "Tout le monde"
-   - Clique "Déployer"
-   - **IMPORTANT:** Copie l'URL qui apparaît
-
-4. **Ajouter l'URL dans .env.local:**
+   NEXT_PUBLIC_SUPABASE_URL=https://xxxxxxxxx.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGc...ton_token
    ```
-   NEXT_PUBLIC_GOOGLE_SHEETS_URL=ton_url_google_apps_script
-   ```
-
-5. **Tester**
-   - Va sur l'URL dans ton navigateur
-   - Tu devrais voir: "Newsletter API is running!"
 
 ---
 
@@ -139,7 +118,8 @@
 3. **Teste la newsletter:**
    - Va sur http://localhost:3000/participer#newsletter
    - Entre un email et inscris-toi
-   - Check ton Google Sheet, l'email devrait apparaître
+   - Va sur http://localhost:3000/admin/newsletter pour voir les inscriptions
+   - Ou check dans Supabase → Table Editor → newsletter_subscriptions
 
 ---
 
@@ -147,11 +127,12 @@
 
 Ajoute ces variables d'environnement dans Vercel:
 1. Va sur vercel.com → ton projet → Settings → Environment Variables
-2. Ajoute les 4 variables:
+2. Ajoute les 5 variables:
    - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
    - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
    - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
-   - `NEXT_PUBLIC_GOOGLE_SHEETS_URL`
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
 ---
 
