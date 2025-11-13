@@ -31,8 +31,8 @@ export default function MentionsLegalesPage() {
                 <div className="pl-lg border-l-4 border-orange/20">
                   <p><strong className="text-charcoal">Association Résonance Citoyenne</strong></p>
                   <p>Association loi 1901</p>
-                  <p>RNA : [En cours d'attribution]</p>
-                  <p>Siège social : [Adresse à compléter]</p>
+                  <p>RNA : W751281338</p>
+                  <p>Siège social : Paris (75)</p>
                   <p>Email : <a href="mailto:contact.resonancecitoyenne@gmail.com" className="text-orange hover:underline">contact.resonancecitoyenne@gmail.com</a></p>
                 </div>
               </div>
@@ -42,7 +42,7 @@ export default function MentionsLegalesPage() {
                 <h2 className="text-h3 font-display font-semibold text-charcoal mb-md">
                   Directeur de la publication
                 </h2>
-                <p>[Nom du président de l'association à compléter]</p>
+                <p>Jacques de Laitre, Président de l'association</p>
               </div>
 
               {/* Hébergement */}
