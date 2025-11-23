@@ -90,81 +90,87 @@ export default function ExperimentationsPage() {
           </div>
         </section>
 
-        {/* Featured Experiment: Quadratic Voting */}
+        {/* Active Experiments */}
         <section className="py-3xl bg-cream">
           <div className="container max-w-5xl">
-            <div className="card border-l-4 border-orange p-2xl">
-              <div className="grid md:grid-cols-2 gap-2xl items-center">
-                <div>
-                  <div className="inline-flex items-center gap-2 bg-orange/10 px-md py-xs rounded-full mb-md">
-                    <Calculator className="text-orange" size={16} />
-                    <span className="text-body-sm font-semibold text-orange">
-                      En développement
-                    </span>
+            <h2 className="text-h2 font-display font-bold text-charcoal text-center mb-2xl">
+              Expérimentations actives
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-xl mb-2xl">
+              {/* QV Demo */}
+              <div className="card border-l-4 border-orange">
+                <div className="flex items-start gap-lg">
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-orange/10 flex items-center justify-center">
+                    <Calculator className="text-orange" size={32} />
                   </div>
-                  <h2 className="text-h2 font-display font-bold text-charcoal mb-md">
-                    Vote Quadratique
-                  </h2>
-                  <p className="text-body text-gray-warm mb-lg">
-                    Le vote quadratique permet d'exprimer l'<strong>intensité</strong> de tes préférences,
-                    pas juste "oui" ou "non". Tu reçois 100 crédits à distribuer sur plusieurs propositions.
-                    Le coût ? n² crédits (1 vote = 1 crédit, 2 votes = 4 crédits, 3 votes = 9 crédits...).
-                  </p>
-                  <div className="bg-honey/10 border-l-4 border-honey p-md rounded-button mb-lg">
-                    <p className="text-body-sm text-charcoal">
-                      <strong>Pourquoi ?</strong> Le vote classique traite toutes les préférences également.
-                      Avec le vote quadratique, tu peux crier fort sur ce qui compte vraiment pour toi,
-                      tout en gardant une voix sur le reste.
+                  <div className="flex-1">
+                    <div className="inline-flex items-center gap-2 bg-orange/10 px-sm py-xxs rounded-full mb-sm">
+                      <span className="text-body-sm font-semibold text-orange">
+                        ✅ Disponible
+                      </span>
+                    </div>
+                    <h3 className="text-h3 font-display font-semibold text-charcoal mb-sm">
+                      Vote Quadratique - Démo
+                    </h3>
+                    <p className="text-body text-gray-warm mb-md">
+                      Découvre le vote quadratique avec un exemple simple : budget municipal.
+                      Distribue 100 crédits sur 3 propositions pour comprendre le mécanisme.
                     </p>
-                  </div>
-                  <Button variant="primary" icon={ArrowRight} iconPosition="right">
-                    Bientôt disponible
-                  </Button>
-                </div>
-
-                <div className="bg-white p-xl rounded-card shadow-soft">
-                  <h3 className="text-h4 font-display font-semibold text-charcoal mb-md">
-                    Exemple : Crèche vs Skatepark
-                  </h3>
-                  <div className="space-y-md">
-                    <div>
-                      <div className="flex justify-between text-body-sm mb-xs">
-                        <span className="text-charcoal">🏫 Crèche municipale</span>
-                        <span className="text-orange font-semibold">5 votes (25 crédits)</span>
-                      </div>
-                      <div className="h-2 bg-gray-light rounded-full overflow-hidden">
-                        <div className="h-full bg-orange w-[50%]"></div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex justify-between text-body-sm mb-xs">
-                        <span className="text-charcoal">🛹 Skatepark</span>
-                        <span className="text-forest font-semibold">3 votes (9 crédits)</span>
-                      </div>
-                      <div className="h-2 bg-gray-light rounded-full overflow-hidden">
-                        <div className="h-full bg-forest w-[30%]"></div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex justify-between text-body-sm mb-xs">
-                        <span className="text-charcoal">🌳 Parc urbain</span>
-                        <span className="text-sky font-semibold">2 votes (4 crédits)</span>
-                      </div>
-                      <div className="h-2 bg-gray-light rounded-full overflow-hidden">
-                        <div className="h-full bg-sky w-[20%]"></div>
-                      </div>
-                    </div>
-
-                    <div className="pt-md border-t border-gray-light">
-                      <div className="flex justify-between text-body font-semibold">
-                        <span className="text-charcoal">Crédits utilisés</span>
-                        <span className="text-orange">38 / 100</span>
-                      </div>
-                    </div>
+                    <Link href="/experimentation/vote-quadratique">
+                      <Button variant="primary" icon={ArrowRight} iconPosition="right">
+                        Tester la démo
+                      </Button>
+                    </Link>
                   </div>
                 </div>
+              </div>
+
+              {/* L'Année Citoyenne */}
+              <div className="card border-l-4 border-forest">
+                <div className="flex items-start gap-lg">
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-forest/10 flex items-center justify-center">
+                    <Vote className="text-forest" size={32} />
+                  </div>
+                  <div className="flex-1">
+                    <div className="inline-flex items-center gap-2 bg-forest/10 px-sm py-xxs rounded-full mb-sm">
+                      <span className="text-body-sm font-semibold text-forest">
+                        ✅ Disponible
+                      </span>
+                    </div>
+                    <h3 className="text-h3 font-display font-semibold text-charcoal mb-sm">
+                      L'Hebdo Parlementaire
+                    </h3>
+                    <p className="text-body text-gray-warm mb-md">
+                      Simulation complète : 52 semaines, 52 vraies propositions de loi françaises.
+                      Vote POUR ou CONTRE avec un budget de 1000 crédits pour l'année.
+                    </p>
+                    <Link href="/experimentation/annee-citoyenne">
+                      <Button variant="primary" icon={ArrowRight} iconPosition="right">
+                        Commencer la simulation
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* QV Explanation */}
+            <div className="card bg-white p-xl">
+              <h3 className="text-h3 font-display font-bold text-charcoal mb-md">
+                Qu'est-ce que le Vote Quadratique ?
+              </h3>
+              <p className="text-body text-gray-warm mb-lg">
+                Le vote quadratique permet d'exprimer l'<strong>intensité</strong> de tes préférences,
+                pas juste "oui" ou "non". Tu reçois un budget de crédits à distribuer sur plusieurs propositions.
+                Le coût ? n² crédits (1 vote = 1 crédit, 2 votes = 4 crédits, 3 votes = 9 crédits...).
+              </p>
+              <div className="bg-honey/10 border-l-4 border-honey p-md rounded-button">
+                <p className="text-body-sm text-charcoal">
+                  <strong>Pourquoi ?</strong> Le vote classique traite toutes les préférences également.
+                  Avec le vote quadratique, tu peux crier fort sur ce qui compte vraiment pour toi,
+                  tout en gardant une voix sur le reste.
+                </p>
               </div>
             </div>
           </div>
