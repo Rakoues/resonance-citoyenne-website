@@ -7,7 +7,7 @@ import { Trophy, Target, PieChart } from "lucide-react";
 interface ImpactReportProps {
     votes: Record<string, number>;
     finalSavings: number;
-    bills: any[];
+    bills: Array<{ id: string; title: string; category: string }>;
 }
 
 export default function ImpactReport({
@@ -17,7 +17,6 @@ export default function ImpactReport({
 }: ImpactReportProps) {
     // Calculate stats
     const totalSpent = Object.values(votes).reduce((acc, v) => acc + v * v, 0);
-    const totalVotes = Object.values(votes).reduce((acc, v) => acc + Math.abs(v), 0);
 
     // Top 3 issues
     const topIssues = Object.entries(votes)

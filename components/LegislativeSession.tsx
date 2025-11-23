@@ -34,7 +34,7 @@ interface Bill {
 
 interface LegislativeSessionProps {
     initialBills: Bill[];
-    onComplete: (report: any) => void;
+    onComplete: (report: { votes: Record<string, number>; finalBudget: number }) => void;
 }
 
 const INITIAL_BUDGET = 1000;
@@ -52,11 +52,13 @@ export default function LegislativeSession({
     useEffect(() => {
         const initSession = async () => {
             if (supabase) {
-                const { data, error } = await supabase
+                const { data } = await supabase
                     .from("sim_users")
+                    // @ts-expect-error - Supabase types mismatch
                     .insert({})
                     .select()
                     .single();
+                // @ts-expect-error - Supabase types mismatch
                 if (data) setUserId(data.id);
             } else {
                 setUserId("mock-user-" + Math.random().toString(36).substr(2, 9));
@@ -121,13 +123,16 @@ export default function LegislativeSession({
             const vote = votes[currentBill.id];
             if (vote && vote.position !== 'abstain') {
                 try {
-                    await supabase.from("sim_votes").insert({
-                        user_id: userId,
-                        bill_id: currentBill.id,
-                        credits: vote.intensity * vote.intensity,
-                        vote_count: vote.intensity,
-                        direction: vote.position === 'for' ? "for" : "against",
-                    });
+                    await supabase
+                        .from("sim_votes")
+                        // @ts-expect-error - Supabase types mismatch
+                        .insert({
+                            user_id: userId,
+                            bill_id: currentBill.id,
+                            credits: vote.intensity * vote.intensity,
+                            vote_count: vote.intensity,
+                            direction: vote.position === 'for' ? "for" : "against",
+                        });
                 } catch (error) {
                     console.error("Error saving vote:", error);
                 }
@@ -138,7 +143,10 @@ export default function LegislativeSession({
         if (currentWeek < TOTAL_WEEKS) {
             setCurrentWeek((prev) => prev + 1);
         } else {
-            onComplete({ votes, finalBudget: remainingBudget });
+            const voteNumbers = Object.fromEntries(
+                Object.entries(votes).map(([id, vote]) => [id, vote.position === 'for' ? vote.intensity : vote.position === 'against' ? -vote.intensity : 0])
+            );
+            onComplete({ votes: voteNumbers, finalBudget: remainingBudget });
         }
     };
 
@@ -146,7 +154,12 @@ export default function LegislativeSession({
         return (
             <div className="p-8 text-center">
                 <h2 className="text-xl font-bold">Session terminée ou semaine vide</h2>
-                <button onClick={() => onComplete({ votes, finalBudget: remainingBudget })} className="mt-4 px-4 py-2 bg-orange-600 text-white rounded">
+                <button onClick={() => {
+                    const voteNumbers = Object.fromEntries(
+                        Object.entries(votes).map(([id, vote]) => [id, vote.position === 'for' ? vote.intensity : vote.position === 'against' ? -vote.intensity : 0])
+                    );
+                    onComplete({ votes: voteNumbers, finalBudget: remainingBudget });
+                }} className="mt-4 px-4 py-2 bg-orange-600 text-white rounded">
                     Voir les résultats
                 </button>
             </div>
